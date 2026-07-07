@@ -1,10 +1,9 @@
 replicaCount: 1
 
 image:
-  repository: kubernetesworkshop.azurecr.io/workshop/<your-github-username>/workshopapp
-  # ↑ participants: replace <your-github-username> with your GitHub username (lowercase)
-  tag: "latest"
-  # ↑ participants: paste your image tag here after each push
+  repository: kubernetesworkshop.azurecr.io/workshop/thomas-slippens/workshopapp
+  tag: "0.0.0"
+  # ↑ auto-updated by GitHub Actions on every push
   pullPolicy: IfNotPresent
 
 imagePullSecrets:
