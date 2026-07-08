@@ -1,11 +1,12 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
+var appName = Environment.GetEnvironmentVariable("APP_NAME") ?? "unknown";
 
 // ---------------------------------------------------------------
 // Workshop participants: add your endpoints below this line!
 // ---------------------------------------------------------------
 
-app.MapGet("/", () => "Hello from the workshop! 👋");
+app.MapGet("/hello", () => $"Hello from {appName}!");
 
 app.MapGet("/health", () => Results.Ok(new { status = "healthy" }));
 
