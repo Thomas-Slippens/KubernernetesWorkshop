@@ -11,6 +11,10 @@ spec:
     metadata:
       labels:
         app: workshop-app
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "{{ .Values.dapr.appId }}"
+        dapr.io/app-port: "8080"
     spec:
       imagePullSecrets:
         {{- toYaml .Values.imagePullSecrets | nindent 8 }}
@@ -20,6 +24,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 8080
+          env:
+            - name: APP_NAME
+              value: "{{ .Values.dapr.appId }}"
           livenessProbe:
             httpGet:
               path: /health

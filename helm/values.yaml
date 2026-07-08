@@ -20,3 +20,7 @@ ingress:
   # ↑ set by the ApplicationSet automatically — do not edit this
   tls:
     secretName: workshop-app-tls
+
+dapr:
+  appId: "changeme"
+  # ↑ set by the ApplicationSet automatically — do not edit this
