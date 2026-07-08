@@ -19,4 +19,4 @@ ingress:
   host: "changeme.kubernetes.soulsseeker.com"
   # ↑ set by the ApplicationSet automatically — do not edit this
   tls:
-    secretName: workshop-wildcard-tls
+    secretName: workshop-app-tls

@@ -4,6 +4,7 @@ metadata:
   name: workshop-app
   annotations:
     external-dns.alpha.kubernetes.io/hostname: {{ .Values.ingress.host }}
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: nginx
   tls:
